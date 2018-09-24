@@ -1,0 +1,35 @@
+<!doctype HTML>
+<head>
+    <title> EBBA Cnn </title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="search.js"></script>
+</head>
+<body>
+    <div class="bar">
+        <div class="search">
+            <input type="text" id="impression" class="searchTerm" value="20707-30.jpg">
+            <button class="searchButton" onclick="search()">
+                search
+            </button>
+
+        </div> <!-- SEARCH -->
+
+
+
+    </div> <!-- BAR --> 
+    <div class="wrapper"> 
+        <div class="radio">
+            <div style="margin-right: 10px">
+                Number of Images to Display: 
+            </div>
+            <form action="">
+                <input type="radio" checked name="imageset" value="50"> 50
+                <input type="radio" name="imageset" value="200"> 200
+                <input type="radio" name="imageset" value="all"> all
+            </form>
+        </div>
+    </div>
+
+    <div id="results" class="main"></div>
+</body>
+</html>
