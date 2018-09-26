@@ -13,7 +13,7 @@
             stroke-width: 3;
         }
         .dot {
-            fill: #ffab00;
+            fill: red;
             stroke: #fff;
         }
     </style>
@@ -28,12 +28,12 @@
     <!-------------------------------------------------------------------------------------------->
     <div class="bar">
         <div class="search">
-            <input type="text" id="impression" class="searchTerm" value="33496-20.jpg">
+            <input type="text" id="impression" class="searchTerm" value="30906-10.jpg">
             <button class="searchButton" onclick="search()">
                 search
             </button>
 
-            <img id="seed" style="height:112px; margin-left:25px" src="../archv/thumbnails/33496-20.jpg">
+            <img id="seed" style="height:112px; margin-left:25px" src="../archv/thumbnails/30906-10.jpg">
         </div> <!-- /SEARCH -->
     </div> <!-- /BAR --> 
     <!-------------------------------------------------------------------------------------------->
@@ -48,8 +48,8 @@
                 Number of Images to Display: 
             </div>
             <form action="">
-                <input type="radio" name="imageset" value="50"> 50
-                <input type="radio" checked name="imageset" value="200"> 200
+                <input type="radio" checked name="imageset" value="50"> 50
+                <input type="radio" name="imageset" value="200"> 200
                 <input type="radio" name="imageset" value="all"> all
             </form>
 
@@ -66,7 +66,7 @@
     <!-------------------------------------------------------------------------------------------->
     <!--                                       PLOTS                                            -->
     <!-------------------------------------------------------------------------------------------->
-    <div class="main" style="display: flex; flex-direction: row">
+    <div class="main">
         <div id="plot50"></div>
         <div id="plot200"></div>
         <div id="plot16000"></div>
