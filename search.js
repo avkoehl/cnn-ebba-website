@@ -1,6 +1,7 @@
 function search()
 {
     var impression = document.getElementById("impression").value;
+    document.getElementById("seed").src = "../archv/thumbnails/" + impression;
     var params = "input=" + impression 
 
     var http = new XMLHttpRequest();
@@ -22,7 +23,14 @@ function search()
 
 function load_result(data)
 {
+
+    //if slider unchecked:
     clean_results(data);
+    distance_plots(data);
+
+    //else checked:
+    //bonus_results(data);
+    //distance_plot(data);
 }
 
 function clean_results(data)
