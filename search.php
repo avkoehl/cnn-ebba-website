@@ -2,7 +2,9 @@
 
   $impression = $_POST["input"];
 
-  $baseurl = "localhost:5000/distance?img=";
+  $text = file('config.yml');
+  $temp = explode(':', $text[0]);
+  $baseurl = trim($temp[1].':'.$temp[2]);
 
   $url = $baseurl.$impression;
 
