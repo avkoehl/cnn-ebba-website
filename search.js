@@ -14,13 +14,18 @@ function search()
         if (http.readyState == 4 && http.status == 200) 
         {
             var data = http.responseText;
-            loadresult(data);
+            load_result(data);
         }// if good response
     } // callback
     http.send(params);
 }
 
-function loadresult(data)
+function load_result(data)
+{
+    clean_results(data);
+}
+
+function clean_results(data)
 {
     var value = document.querySelector('input[name=imageset]:checked').value;
     var impath = "../archv/thumbnails/"; 

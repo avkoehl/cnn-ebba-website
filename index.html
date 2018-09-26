@@ -4,32 +4,47 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <script src="search.js"></script>
 </head>
+
 <body>
+
+    <!-------------------------------------------------------------------------------------------->
     <div class="bar">
         <div class="search">
-            <input type="text" id="impression" class="searchTerm" value="20707-30.jpg">
+            <input type="text" id="impression" class="searchTerm" value="33496-20.jpg">
             <button class="searchButton" onclick="search()">
                 search
             </button>
 
-        </div> <!-- SEARCH -->
+            <img id="seed" style="height:112px; margin-left:25px" src="../archv/thumbnails/33496-20.jpg">
+        </div> <!-- /SEARCH -->
+    </div> <!-- /BAR --> 
+    <!-------------------------------------------------------------------------------------------->
 
 
 
-    </div> <!-- BAR --> 
+    <!-------------------------------------------------------------------------------------------->
     <div class="wrapper"> 
         <div class="radio">
             <div style="margin-right: 10px">
                 Number of Images to Display: 
             </div>
             <form action="">
-                <input type="radio" checked name="imageset" value="50"> 50
-                <input type="radio" name="imageset" value="200"> 200
+                <input type="radio" name="imageset" value="50"> 50
+                <input type="radio" checked name="imageset" value="200"> 200
                 <input type="radio" name="imageset" value="all"> all
             </form>
-        </div>
-    </div>
+
+            <div style="margin-left: 50px; margin-right: 10px">
+                Add extra information to the results:
+            </div>
+            <label class="switch"> 
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div> <!-- /Radio -->
+    </div> <!-- /wrapper -->
 
     <div id="results" class="main"></div>
+    <!-------------------------------------------------------------------------------------------->
 </body>
 </html>
