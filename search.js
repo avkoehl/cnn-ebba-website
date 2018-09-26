@@ -23,7 +23,7 @@ function search()
 function loadresult(data)
 {
     var value = document.querySelector('input[name=imageset]:checked').value;
-    var impath = "../thumbnails/"; 
+    var impath = "../archv/thumbnails/"; 
 
     // first clear the results
     document.getElementById("results").innerHTML = "";
