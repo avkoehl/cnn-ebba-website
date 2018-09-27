@@ -102,7 +102,19 @@ function results(data)
 
     var main = document.getElementById("results");
 
-    classifier(results);
+    var lists = [];
+    lists.push(classifier(index, results));
+    lists.push(classifier(10, results));
+    lists.push(classifier(20, results));
+    lists.push(classifier(40, results));
+    lists.push(classifier(100, results));
+
+    var classes = document.getElementById("knn");
+    classes.innerHTML = "";
+    for (var i = 0; i < lists.length; i++)
+    {
+        classes.appendChild(lists[i]);
+    }
 
     for (var i = 0; i < len; i++) {
         var name = results[i].split(" ")[0];
@@ -139,32 +151,51 @@ function results(data)
 
 }
 
-function classifier (results)
+function classifier (count, results)
 {
+    var ul=document.createElement('ul');
+
+
+    // at some point read in index as one of the cutoffs for the classifier
     var clusters_all = [];
-    for (var i = 0; i < results.length; i++) {
+    for (var i = 0; i < count; i++) {
         var name = results[i].split(" ")[0];
         clusters_all.push(clusterid[name]);
     }
 
-    counts_50 = {};
-    counts_200 = {};
-    counts_all = {};
-    for (var i = 0; i < results.length; i++){
+    counts = {};
+    for (var i = 0; i < count; i++){
         num = clusters_all[i];
-        if (i < 50){
-            counts_50[num] = counts_50[num] ? counts_50[num] + 1 : 1;
-        }
-        if (i < 200) {
-            counts_200[num] = counts_200[num] ? counts_200[num] + 1 : 1;
-        }
+        counts[num] = counts[num] ? counts[num] + 1 : 1;
     }//for
 
-    // iterate through the two objects make an array of objects for both:
+    // iterate through the objects make an array of objects for all:
     // [ {cluster: count}, {cluster2: count} ...
+    var arrcount = [];
+    for (k in counts){
+        obj = {id:k, count:counts[k]};
+        arrcount.push(obj);
+    }
     // sort these arrays by their counts
-    // print min(5, arraylen)
+    // descending order
+    arrcount.sort(function (a,b) {
+        return b.count - a.count});
 
+    var li=document.createElement('li');
+    li.innerHTML = "k = " + count;
+    ul.appendChild(li);
+    for (var i = 0; i<Math.min(5, arrcount.length); i++)
+    {
+        var li=document.createElement('li');
+        li.innerHTML= arrcount[i].id + ": " + arrcount[i].count;
+        if (i == 0)
+        {
+            li.style.color = "red";
+        }
+        ul.appendChild(li);
+    }
+
+    return ul;
 }
 
 function get_index (results)
