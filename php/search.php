@@ -6,7 +6,7 @@
   $temp = explode(':', $text[0]);
   $baseurl = trim($temp[1].':'.$temp[2]);
 
-  $url = $baseurl.$impression;
+  $url = $baseurl."distance?img=".$impression;
 
   $curl = curl_init($url);  
 

@@ -43,7 +43,10 @@ function cluster_results(data)
 
         var res = document.createElement("div");
         var img = document.createElement("img");
+        var link = document.createElement("a");
+        link.href= "https://ebba.english.ucsb.edu/ballad/cluster.php?id=" + name;
         var desc = document.createElement("div");
+        link.appendChild(img);
 
         res.style.border =  "1px solid #333";
         if (i == index){
@@ -55,12 +58,12 @@ function cluster_results(data)
         res.style.marginLeft =  "10px";
 
         img.src = impath + imgname;
-        img.style.width =  "112px";
-        img.style.height =  "112px";
+        img.style.width =  "300px";
+       // img.style.height =  "112px";
 
         desc.innerHTML = "<center>" + name + "<br><i>distance: " + dist.substring(0,4) + "</i></center>";
 
-        res.appendChild(img);
+        res.appendChild(link);
         res.appendChild(desc);
         main.appendChild(res);
     }
