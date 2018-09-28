@@ -1,0 +1,57 @@
+<!doctype HTML>
+<html>
+<head>
+    <title> EBBA Cnn </title>
+    <link rel="stylesheet" type="text/css" href="./style/mystyle.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="./javascript/data/representatives.js"></script>
+    <script src="./javascript/cluster_plot.js"></script>
+    <script src="./javascript/cluster_search.js"></script>
+    <style type="text/css">
+        .line {
+            fill: none;
+            stroke: #ffab00;
+            stroke-width: 3;
+        }
+        .dot {
+            fill: red;
+            stroke: #fff;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <!-------------------------------------------------------------------------------------------->
+    <!--                                        BAR                                             -->
+    <!-------------------------------------------------------------------------------------------->
+    <div class="bar">
+        <div class="search">
+            <input type="text" id="cluster" class="searchTerm" value="0">
+            <button class="searchButton" onclick="cluster_search()">
+                search
+            </button>
+
+            <img id="seed" style="height:112px; margin-left:25px" src="../archv/thumbnails/22178-10.jpg">
+        </div> <!-- /SEARCH -->
+    </div> <!-- /BAR --> 
+
+
+    <!-------------------------------------------------------------------------------------------->
+    <!--                                       PLOTS                                            -->
+    <!-------------------------------------------------------------------------------------------->
+    <div class="main" id="plot">
+        <div id="plot10"></div>
+        <div id="plot30"></div>
+        <div id="plotall"></div>
+    </div> <!-- PLOTS -- >
+
+    <!-------------------------------------------------------------------------------------------->
+    <!--                                      RESULTS                                           -->
+    <!-------------------------------------------------------------------------------------------->
+    <div id="results" class="main"></div>
+
+</body>
+</html>

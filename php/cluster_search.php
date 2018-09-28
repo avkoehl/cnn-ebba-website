@@ -2,11 +2,11 @@
 
   $impression = $_POST["input"];
 
-  $text = file('config.yml');
+  $text = file('./config.yml');
   $temp = explode(':', $text[0]);
   $baseurl = trim($temp[1].':'.$temp[2]);
 
-  $url = $baseurl.$impression;
+  $url = $baseurl."metadistance?cid=".$impression;
 
   $curl = curl_init($url);  
 

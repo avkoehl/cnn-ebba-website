@@ -5,7 +5,7 @@ function search()
     var params = "input=" + impression 
 
     var http = new XMLHttpRequest();
-    var url = "search.php";
+    var url = "./php/search.php";
     http.open("POST", url, true);
 
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
